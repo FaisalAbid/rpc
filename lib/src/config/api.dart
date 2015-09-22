@@ -25,6 +25,7 @@ class ApiConfig extends ApiConfigResource {
 
   Future<HttpApiResponse> handleHttpRequest(ParsedHttpApiRequest request) {
     final List<ApiConfigMethod> methods = _methodMap[request.methodKey];
+    print(context.baseUrl);
     if (methods != null) {
       for (var method in methods) {
         // TODO: improve performance of this (measure first).
